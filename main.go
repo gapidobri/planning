@@ -22,11 +22,12 @@ func main() {
 		on('b', 'c'),
 	)
 
-	printState(state)
+	//printState(state)
 
-	run(goals)
+	//run(goals)
+	NewGoalRegression(state, goals).Run()
 
-	printState(state)
+	//printState(state)
 }
 
 func run(goals mapset.Set[Predicate]) {
@@ -55,7 +56,7 @@ func run(goals mapset.Set[Predicate]) {
 		log.Fatal("no actions left")
 	}
 
-	// 3. make action possibles
+	// 3. make action possible
 	run(bestAction.Can())
 
 	// 4. execute action
